@@ -11,7 +11,6 @@ const forecast = (longitude, latitude, callback) => {
         } else if ( body.error) {
             callback("Unable to find location. Please try another.");
         } else {
-            console.log(body.daily.data);
             callback(undefined, body.daily.data[0].summary + " Het is momenteel " + body.currently.temperature +
                                 "°C. Er is een " + body.currently.precipProbability + "% kans op regen.\nDe max temperatuur" +
                                 " voor vandaag is " + body.daily.data[0].temperatureHigh + "°C.");
